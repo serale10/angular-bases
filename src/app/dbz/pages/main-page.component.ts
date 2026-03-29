@@ -4,6 +4,7 @@ import { Character } from '../interfaces/character.interface';
 
 @Component({
   selector: 'app-dbz-main-page',
+  standalone: false,
   templateUrl: './main-page.component.html'
 })
 

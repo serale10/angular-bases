@@ -1,12 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { DbzModule } from './dbz/dbz.module';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        DbzModule
       ],
       declarations: [
         AppComponent
@@ -20,16 +22,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'firs_app'`, () => {
+  it(`should have the configured title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('firs_app');
+    expect(app.title).toEqual('Titulo Home');
   });
 
-  it('should render title', () => {
+  it('should render the DBZ main page', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, firs_app');
+    expect(compiled.querySelector('app-dbz-main-page')).not.toBeNull();
   });
 });
